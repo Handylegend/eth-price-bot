@@ -1,0 +1,26 @@
+name: ETH Price Bot
+
+on:
+  schedule:
+    # 每4小时运行一次
+    - cron: "0 */4 * * *"
+  workflow_dispatch:  # 手动测试用
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 拉代码
+        uses: actions/checkout@v4
+
+      - name: 设置Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: 安装依赖
+        run: pip install -r requirements.txt
+
+      - name: 运行机器人
+        run: python main.py
