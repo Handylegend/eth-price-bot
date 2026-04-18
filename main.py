@@ -2,7 +2,7 @@ import requests
 import datetime
 
 # ===== 配置 =====
-WEBHOOK_URL = os.getenv('DISCORD_WEBHOOK_URL')
+WEBHOOK_URL = "DISCORD_WEBHOOK_URL"
 # Bybit ETH 永续（USDT）
 BYBIT_URL = "https://api.bybit.com/v5/market/tickers?category=linear&symbol=ETHUSDT"
 
